@@ -45,11 +45,11 @@ This is styling writing standard conventions for naming variables, functions, cl
    * Provided more details without introducing redundancy, e.g. `isActiveUser`, `userLoggedIn`
 ### Example - Variable Names
 1. What is stored? A user object (name, email, age)
-   * Bad Names, e.g. `u`, `data` > because "u" and "data" could contain anything
-   * Okay Names, e.g. `userData`, `person` > because "userData" is a bit redundant, "person" is too unspecific
-   * Good Names, e.g. `user`, `customer` > because "user" is descriptive, "customer" is even more specific.
+   * Bad Names, e.g. `u`, `data` >because "u" and "data" could contain anything
+   * Okay Names, e.g. `userData`, `person` >because "userData" is a bit redundant, "person" is too unspecific
+   * Good Names, e.g. `user`, `customer` >because "user" is descriptive, "customer" is even more specific.
 2. What is stored? User input validation result (true/false)
-   * Bad Names, e.g. `v`, `val` > because "v" could be anything, "val" could also for "value"
-   * Okay Names, e.g. `correct`, `validatedInput` > because both terms don't necessarily imply a true/false value
-   * Good Names, e.g. `isValid`, `isCorrect` > because descriptive and value type is clear
+   * Bad Names, e.g. `v`, `val` >because "v" could be anything, "val" could also for "value"
+   * Okay Names, e.g. `correct`, `validatedInput` >because both terms don't necessarily imply a true/false value
+   * Good Names, e.g. `isValid`, `isCorrect` >because descriptive and value type is clear
 
