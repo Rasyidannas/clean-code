@@ -33,12 +33,23 @@ This is styling writing standard conventions for naming variables, functions, cl
 4. kebab-case | `<side-drawer>`
 
 ## Naming Variables, Constants & Properties
+### Naming-Based Type Data
 1. For value is an **Object**,
-    * describe the value, e.g. `user`, `database`
-    * Provided more details without introducing redundancy, e.g. `authenticatedUser`, `sqlDatabase`
+   * Describe the value, e.g. `user`, `database`
+   * Provided more details without introducing redundancy, e.g. `authenticatedUser`, `sqlDatabase`
 2. For value is a **Number** or **String**,
-    * describe the value, e.g. `name`, `age`
-    * Provided more details without introducing redundancy, e.g. `firstName`, `age`
+   * Describe the value, e.g. `name`, `age`
+   * Provided more details without introducing redundancy, e.g. `firstName`, `age`
 3. For value is a **Boolean**,
-    * answer a true/false question, e.g. `isActive`, `loggedIn`
-    * Provided more details without introducing redundancy, e.g. `isActiveUser`, `userLoggedIn`
+   * Answer a true/false question, e.g. `isActive`, `loggedIn`
+   * Provided more details without introducing redundancy, e.g. `isActiveUser`, `userLoggedIn`
+### Example - Variable Names
+1. What is stored? A user object (name, email, age)
+   * Bad Names, e.g. `u`, `data` > because "u" and "data" could contain anything
+   * Okay Names, e.g. `userData`, `person` > because "userData" is a bit redundant, "person" is too unspecific
+   * Good Names, e.g. `user`, `customer` > because "user" is descriptive, "customer" is even more specific.
+2. What is stored? User input validation result (true/false)
+   * Bad Names, e.g. `v`, `val` > because "v" could be anything, "val" could also for "value"
+   * Okay Names, e.g. `correct`, `validatedInput` > because both terms don't necessarily imply a true/false value
+   * Good Names, e.g. `isValid`, `isCorrect` > because descriptive and value type is clear
+
