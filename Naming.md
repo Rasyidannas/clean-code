@@ -32,7 +32,7 @@ This is styling writing standard conventions for naming variables, functions, cl
 3. PascalCase | `AdminRole`, `UserRepository`
 4. kebab-case | `<side-drawer>`
 
-## Naming Variables, Constants & Properties
+## Naming Variables, Functions, Class, and More
 ### Naming-Based Type Data
 1. For value is an **Object**,
    * Describe the value, e.g. `user`, `database`
