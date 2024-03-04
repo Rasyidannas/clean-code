@@ -33,7 +33,7 @@ This is styling writing standard conventions for naming variables, functions, cl
 4. kebab-case | `<side-drawer>`
 
 ## Naming Variables, Functions, Class, and More
-### Naming-Based Type Data
+### Naming Variables, Constants & Properties Based Type Data
 1. For value is an **Object**,
    * Describe the value, e.g. `user`, `database`
    * Provided more details without introducing redundancy, e.g. `authenticatedUser`, `sqlDatabase`
@@ -43,7 +43,7 @@ This is styling writing standard conventions for naming variables, functions, cl
 3. For value is a **Boolean**,
    * Answer a true/false question, e.g. `isActive`, `loggedIn`
    * Provided more details without introducing redundancy, e.g. `isActiveUser`, `userLoggedIn`
-### Example - Variable Names
+#### Example - Variable Names
 1. What is stored? A user object (name, email, age)
    * Bad Names, e.g. `u`, `data` _because "u" and "data" could contain anything_
    * Okay Names, e.g. `userData`, `person` _because "userData" is a bit redundant, "person" is too unspecific_
@@ -52,4 +52,5 @@ This is styling writing standard conventions for naming variables, functions, cl
    * Bad Names, e.g. `v`, `val` _because "v" could be anything, "val" could also for "value"_
    * Okay Names, e.g. `correct`, `validatedInput` _because both terms don't necessarily imply a true/false value_
    * Good Names, e.g. `isValid`, `isCorrect` _because descriptive and value type is clear_
+---
 
