@@ -1,5 +1,4 @@
 # Clean Code
----
 ## What is a Clean Code? 
 1. Should be readable and meaningful
 2. Should reduce cognitive load
