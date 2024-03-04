@@ -31,3 +31,14 @@ This is styling writing standard conventions for naming variables, functions, cl
 2. camelCase  | `isValid`, `sendResponse`
 3. PascalCase | `AdminRole`, `UserRepository`
 4. kebab-case | `<side-drawer>`
+
+## Naming Variables, Constants & Properties
+1. For value is an **Object**,
+    * describe the value, e.g. `user`, `database`
+    * Provided more details without introducing redundancy, e.g. `authenticatedUser`, `sqlDatabase`
+2. For value is a **Number** or **String**,
+    * describe the value, e.g. `name`, `age`
+    * Provided more details without introducing redundancy, e.g. `firstName`, `age`
+3. For value is a **Boolean**,
+    * answer a true/false question, e.g. `isActive`, `loggedIn`
+    * Provided more details without introducing redundancy, e.g. `isActiveUser`, `userLoggedIn`
