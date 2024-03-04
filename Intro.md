@@ -9,7 +9,7 @@
 
 ## Key Pain Points and Solutions
 1. Pain points:
-     * Names (variables, functions, and classes)
+     * Names (variables, functions, and classes) [visit link](https://github.com/Rasyidannas/clean-code/blob/master/Naming.md) &#10132
      * Structure & Comments (code formatting, and good or bad comments)
      * Function (length, and parameters)
      * Conditional & Error Handling (deep nesting, and missing error handling)
