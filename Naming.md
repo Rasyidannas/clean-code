@@ -53,6 +53,15 @@ This is styling writing standard conventions for naming variables, functions, cl
    * Okay Names, e.g. `correct`, `validatedInput` _because both terms don't necessarily imply a true/false value_
    * Good Names, e.g. `isValid`, `isCorrect` _because descriptive and value type is clear_
 ### Naming Function & Methods
-1. Function performs on operation, so it describes the operation, e.g. `getUser(...)`, `response.send()`, `getUserByEmail(...)`
-2. Function computes a Boolean, so it answers a true/false question, e.g. `isValid(...)`, `purchase.isPaid()`, `emailIsValid(...)`
+1. For function performs on operation, so it describes the operation, e.g. `getUser(...)`, `response.send()`, `getUserByEmail(...)`
+2. For function computes a Boolean, so it answers a true/false question, e.g. `isValid(...)`, `purchase.isPaid()`, `emailIsValid(...)`
+#### Examples - Function / Method Names
+1. What does the function do? Save user data to a database
+   * Bad Names, e.g. `process(...)`, `handle(...)` _because are very unspecific - what is being "processed"?_
+   * Okay Names, e.g. `save(...)`, `storeData(...)` _because at least we know that something is saved - but what?_
+   * Good Names, e.g. `saveUser(...)`, `user.store(...)` _because the intent is very clear - especially with the method_
+2. What does the function do? Validate the user input
+   * Bad Names, `process(...)`, `save(...)` _because unspecific ("process") or even misleading ("save")_
+   * Okay Names, `validateSave(...)`, `check(...)` _because both names are not 100% specific_
+   * Good Name, e.g. `validate(...)`, `isValid(...)` _because both make sense depends on what the function does exactly_
 
