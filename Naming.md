@@ -53,4 +53,6 @@ This is styling writing standard conventions for naming variables, functions, cl
    * Okay Names, e.g. `correct`, `validatedInput` _because both terms don't necessarily imply a true/false value_
    * Good Names, e.g. `isValid`, `isCorrect` _because descriptive and value type is clear_
 ### Naming Function & Methods
+1. Function performs on operation, so it describes the operation, e.g. `getUser(...)`, `response.send()`, `getUserByEmail(...)`
+2. Function computes a Boolean, so it answers a true/false question, e.g. `isValid(...)`, `purchase.isPaid()`, `emailIsValid(...)`
 
