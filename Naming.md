@@ -77,6 +77,7 @@ This is styling writing standard conventions for naming variables, functions, cl
    * Good Names, e.g. `class Database`, _because "Database" is good, "SQLDatabase" might be even better_
 
 ### Exercise Naming Variables, Function, and Classes
+1. Exercise one
 ```Phyton 
 from datetime import datetime
 
@@ -101,7 +102,7 @@ formatted_date = now.strftime('%Y-%m-%d %H:%M')
 blog_post = BlogPost(title, description, formatted_date)
 blog_post.print()
 ```
-
+2. Exercise two
 ```Phyton 
 class Point:
     def __init__(self, x, y):
