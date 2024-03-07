@@ -76,7 +76,7 @@ This is styling writing standard conventions for naming variables, functions, cl
    * Okay Names, e.g. `class Db`, `class Data` _because not 100% specific_
    * Good Names, e.g. `class Database`, _because "Database" is good, "SQLDatabase" might be even better_
 
-### Exercise Naming
+### Exercise Naming Variables, Function, and Classes
 ```Phyton 
 from datetime import datetime
 
@@ -100,4 +100,42 @@ formatted_date = now.strftime('%Y-%m-%d %H:%M')
 
 blog_post = BlogPost(title, description, formatted_date)
 blog_post.print()
+```
+
+```Phyton 
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
+class Rectangle:
+    def __init__(self, origin, width, height):
+        self.origin = origin
+        self.width = width
+        self.height = height
+
+    def get_area(self):
+        return self.width * self.height
+
+    def print_coordinates(self):
+        top_right = self.origin.x + self.width
+        bottom_left = self.origin.y + self.height
+        print('Starting Point (X)): ' + str(self.origin.x))
+        print('Starting Point (Y)): ' + str(self.origin.y))
+        print('End Point X-Axis (Top Right): ' + str(top_right))
+        print('End Point Y-Axis (Bottom Left): ' + str(bottom_left))
+
+
+def build_rectangle():
+    rectangle_origin = Point(50, 100)
+    rectangle = Rectangle(rectangle_origin, 90, 10)
+
+    return rectangle
+
+
+rectangle = build_rectangle()
+
+print(rectangle.getArea())
+rectangle.print_coordinates()
 ```
