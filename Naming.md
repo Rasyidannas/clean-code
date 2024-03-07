@@ -64,4 +64,40 @@ This is styling writing standard conventions for naming variables, functions, cl
    * Bad Names, `process(...)`, `save(...)` _because unspecific ("process") or even misleading ("save")_
    * Okay Names, `validateSave(...)`, `check(...)` _because both names are not 100% specific_
    * Good Name, e.g. `validate(...)`, `isValid(...)` _because both make sense depends on what the function does exactly_
+### Naming Classes
+1. Describe the Object, e.g. `User`, `Product`,  `Customer`, `Course` _Avoid redundant suffixes e.g. `DatabaseManager`_
+#### Examples - Classes Names
+1. What object is described? A User
+   * Bad Names, e.g. `class UEntity`, `class ObjA` _because both are very unspecific_
+   * Okay Names, e.g. `class UserObj`, `class AppUser` _because both class names have redundant information_
+   * Good Names, e.g. `class User`, `class Admin` _because "User" is just fine - or "Admin" if it's a more specific kind of user_
+2. What object is described? A Database (in code)
+   * Bad Names, e.g. `class Data`, `class DataStorage` _because it's not clear that we're describing a database_
+   * Okay Names, e.g. `class Db`, `class Data` _because not 100% specific_
+   * Good Names, e.g. `class Database`, _because "Database" is good, "SQLDatabase" might be even better_
 
+### Exercise Naming
+```Phyton 
+from datetime import datetime
+
+
+class BlogPost:
+    def __init__(self, title, description, date_published):
+        self.title = title
+        self.description = description
+        self.date_published = date_published
+
+    def print(self):
+        print('Title: ' + self.title)
+        print('Description: ' + self.description)
+        print('Published: ' + self.date_published)
+
+
+title = 'Clean Code Is Great!'
+description = 'Actually, writing Clean Code can be pretty fun. You\'ll see!'
+now = datetime.now()
+formatted_date = now.strftime('%Y-%m-%d %H:%M')
+
+blog_post = BlogPost(title, description, formatted_date)
+blog_post.print()
+```
