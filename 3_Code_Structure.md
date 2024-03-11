@@ -20,3 +20,8 @@ Code formatting improves readability & transports Meaning. That has 2 kinds of f
    * Different concepts ("areas") should be separated by spacing
    * Similar concepts ("areas") should not be separated by spacing
    * Related concepts should be kept close to each other
+### Horizontal Formatting
+1. Lines of code should be readable without scrolling - avoid very long "sentences"
+   * Use indentation (tab/space/enter) - even if not required technically
+   * Break long statements into multiple shorter ones (define to another variable)
+   * Use clear but not unreadably long names
