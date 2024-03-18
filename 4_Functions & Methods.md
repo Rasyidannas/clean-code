@@ -7,6 +7,9 @@
 2. Calling the function should be readable, _because the number and order of arguments matter_
    * Minimize the number of parameters (2 or 3 parameters are fine to read/readable if you want to have more you can save it in an object, array etc )
    * Try to avoid output arguments - especially if they are unexpected
+3. DRY (Don't Repeat Yourself), _Don't write the same code more than once(reuseable function written/exist)_
+4. Keep try function pure
+5. Avoiding unexpected side effect
 ## Example Good Function
 ```Javascript
 function createUser(email, password) {
@@ -56,5 +59,33 @@ function saveUserToDatabase(user) {
 
 function handleError(error) {
   console.log(error.message);
+}
+```
+```Javascript
+function initApp() {
+  try {
+    connectDatabase();
+  } catch (error) {
+    console.log(error.message);
+    // showErrorMessage(...)
+  }
+}
+
+function connectDatabase() {
+  const didConnect = database.connect();
+  if (!didConnect) {
+    throw new Error('Could not connect!');
+  }
+}
+
+function determineSupportAgent(ticket) {
+  if (ticket.requestType === 'unknown') {
+    return findStandardAgent();
+  }
+  return findAgentByRequestType(ticket.requestType);
+}
+
+function isValid(email, password) {
+  return email.includes('@') && password.length >= 7;
 }
 ```
