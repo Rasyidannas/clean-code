@@ -11,6 +11,7 @@
 4. Keep try function pure
 5. Avoiding unexpected side effect
 ## Example Good Function
+1. Exercise One
 ```Javascript
 function createUser(email, password) {
   try {
@@ -61,6 +62,7 @@ function handleError(error) {
   console.log(error.message);
 }
 ```
+2. Exercise two
 ```Javascript
 function initApp() {
   try {
