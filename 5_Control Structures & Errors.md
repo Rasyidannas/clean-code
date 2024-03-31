@@ -48,13 +48,18 @@ function main() {
     },
   ];
 
-  processTransactions(transactions);
+  try {
+    processTransactions(transactions);
+  } catch(error) {
+    showErrorMessage(error.message)
+  }
 }
 
 function processTransactions(transactions) {
   if (isEmpty(transactions)) {
-    showErrorMessage('No transactions provided!');
-    return;
+    const error = new Error('No transactions provided!')
+    error.code = 1
+    throw error
   }
 
   for (const transaction of transactions) {
