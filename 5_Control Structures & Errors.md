@@ -1,18 +1,21 @@
 # Control Structures & Errors
 
 ## How to Keep Your Control Structure Clean?
+
 1. Avoid Deep Nesting
-   * Using Factory Functions and Polymorphism
-   * Utilize Error
+   - Using Factory Functions and Polymorphism
+   - Utilize Error
 2. Prefer Positive Checks (if isEmpty vs isNotEmpty)
 3. Use Guards & Fail Fast
-   * Example:
-       * `if(!email.includes(@))`
-       * `if(!user.active)`
-       * `if(!user.hasPurchases())`
+   - Example:
+     - `if(!email.includes(@))`
+     - `if(!user.active)`
+     - `if(!user.hasPurchases())`
 
 ## Example of Control Structures & Error
+
 1. Control Structures
+
 ```Javascript
 main();
 
@@ -56,11 +59,7 @@ function main() {
 }
 
 function processTransactions(transactions) {
-  if (isEmpty(transactions)) {
-    const error = new Error('No transactions provided!')
-    error.code = 1
-    throw error
-  }
+  validateTransaction(transactions);
 
   for (const transaction of transactions) {
     try {
@@ -68,6 +67,14 @@ function processTransactions(transactions) {
     } catch(error) {
       showErrorMessage(error.message, error.item)
     }
+  }
+}
+
+function validateTransaction(transaction) {
+  if (isEmpty(transaction)) {
+    const error = new Error('No transactions provided!')
+    error.code = 1
+    throw error
   }
 }
 
@@ -83,17 +90,7 @@ function showErrorMessage(message, item) {
 }
 
 function processTransaction(transaction) {
-  if (!isOpen(transaction)) {
-    const error = new Error('Invalid transaction type.');
-    throw error
-    return;
-  }
-
-  if (!isPayment(transaction) && !isRefund(transaction)) {
-    const error = new Error('Invalid transaction type!');
-    error.item = transaction;
-    throw error;
-  }
+  validateTransaction(transaction);
 
   if (usesTransactionMethod(transaction, 'CREDIT_CARD')) {
     processCreditCardTransaction(transaction);
@@ -106,6 +103,20 @@ function processTransaction(transaction) {
 
 function isOpen(transaction) {
   return transaction.status === 'OPEN';
+}
+
+function validateTransaction(transaction) {
+  if (!isOpen(transaction)) {
+    const error = new Error('Invalid transaction type.');
+    throw error
+    return;
+  }
+
+  if (!isPayment(transaction) && !isRefund(transaction)) {
+    const error = new Error('Invalid transaction type!');
+    error.item = transaction;
+    throw error;
+  }
 }
 
 function usesTransactionMethod(transaction, method) {
