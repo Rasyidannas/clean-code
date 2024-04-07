@@ -1,3 +1,7 @@
+# How to write clean Class
+
+1. You typically should prefer many small classes over a few large classes or Classes should have a Single-Responsibility Principle (SRP) (e.g A Product class is responsible for change the product name)
+
 # What the difference between Object and Data Container
 
 1. Object
@@ -11,7 +15,7 @@
 
 # What is a Polymorphism
 
-Polymorphism literally means "many forms" and in computer science, specifically object-oriented programming, it refers to the ability of objects to respond differently to the same message. Or it is like classification (Animal has Cat and Dog)
+Polymorphism literally means "many forms" and in computer science, specifically object-oriented programming, it refers to the ability of objects to respond differently to the same message. Or it is like classification (e.g. Animal has Cat and Dog)
 
 ## Example Polymorphism
 
