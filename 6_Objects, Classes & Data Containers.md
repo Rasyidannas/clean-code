@@ -7,6 +7,7 @@
    - **Single-Responsibility Principle**, class only work related with that name (e.g A User class has login, signup and assgnRole)
    - **Open-Closed Principle**, class should be open for extension but closed for modification. We can use Polymorphism
    - **Liskov Substitution Principle**, object should be replaceable with instances of their subsclasses without altering the behavior, We can use Inheritance
+   - **Interface Segregation Principle**, many client-specific interface are better than one general purpose interface
 
 # What the difference between Object and Data Container
 
