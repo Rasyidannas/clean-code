@@ -54,8 +54,6 @@
     const app = new App(sqlDatabase);
    ```
 
-````
-
 # What the difference between Object and Data Container
 
 1. Object
