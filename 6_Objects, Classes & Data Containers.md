@@ -4,21 +4,68 @@
 2. Use at least a couple of the available properties (Medium Cohesion)
 3. Follow the Law Demeter (e.g `this.customer.lastPurchase.date` change to `this.customer.getLastPurchaseDate()`)
 4. Classes should follow SOLID rule
+
    - **Single-Responsibility Principle**, class only work related with that name (e.g A User class has login, signup and assgnRole)
    - **Open-Closed Principle**, class should be open for extension but closed for modification. We can use Polymorphism
    - **Liskov Substitution Principle**, object should be replaceable with instances of their subsclasses without altering the behavior, We can use Inheritance
    - **Interface Segregation Principle**, many client-specific interface are better than one general purpose interface
+   - **Dependency Inversioon Principle**, you should depend upon abstractions, not concretions
+
+   ```Typescript
+    interface Database {
+        storeData(data: any);
+        }
+
+        interface RemoteDatabase {
+        connect(uri: string);
+        }
+
+        class SQLDatabase implements Database, RemoteDatabase {
+        connect(uri: string) {
+        console.log('Connecting to SQL database!');
+        }
+
+        storeData(data: any) {
+        console.log('Storing data...');
+        }
+    }
+
+    class InMemoryDatabase implements Database {
+        storeData(data: any) {
+        console.log('Storing data...');
+        }
+    }
+
+    class App {
+        private database: Database;
+
+        constructor(database: Database) {
+        this.database = database;
+        }
+
+        saveSettings() {
+        this.database.storeData('Some data');
+        }
+    }
+
+    //We seperate the connect method from App class
+    const sqlDatabase = new SQLDatabase();
+    sqlDatabase.connect('my-url');
+    const app = new App(sqlDatabase);
+   ```
+
+````
 
 # What the difference between Object and Data Container
 
 1. Object
-   - Private internals/properties, public API (methods)
-   - Contain your business logic(in OOP)
-   - Abstractions ever concreations
+- Private internals/properties, public API (methods)
+- Contain your business logic(in OOP)
+- Abstractions ever concreations
 2. Data Container/Data Structure
-   - Public internals/properties, (almost) no API (methods)
-   - Store and transport data
-   - Concretions only
+- Public internals/properties, (almost) no API (methods)
+- Store and transport data
+- Concretions only
 
 # What is a Polymorphism
 
@@ -32,62 +79,62 @@ type Purchase = any;
 let Logistics: any;
 
 interface Delivery {
-    deliverProduct();
-    trackProduct();
+ deliverProduct();
+ trackProduct();
 }
 
 class DeliveryImplementation {
-  protected purchase: Purchase;
+protected purchase: Purchase;
 
-  constructor(purchase: Purchase) {
-    this.purchase = purchase;
-  }
+constructor(purchase: Purchase) {
+ this.purchase = purchase;
+}
 }
 
 class ExpressDelivery extends DeliveryImplementation implements Delivery {
-    deliverProduct() {
-        Logistics.issueExpressDelivery(this.purchase.product)
-    }
+ deliverProduct() {
+     Logistics.issueExpressDelivery(this.purchase.product)
+ }
 
-    trackProduct() {
-        Logistics.trackExpressDelivery(this.purchase.product);
-    }
+ trackProduct() {
+     Logistics.trackExpressDelivery(this.purchase.product);
+ }
 }
 
 class InsuredDelivery extends DeliveryImplementation implements Delivery {
-    deliverProduct() {
-        Logistics.issueInsuredDelivery(this.purchase.product);
-    }
+ deliverProduct() {
+     Logistics.issueInsuredDelivery(this.purchase.product);
+ }
 
-    trackProduct() {
-        Logistics.trackInsuredDelivery(this.purchase.product);
-    }
+ trackProduct() {
+     Logistics.trackInsuredDelivery(this.purchase.product);
+ }
 }
 
 class StandardDelivery extends DeliveryImplementation implements Delivery {
-    deliverProduct() {
-        Logistics.issueStandardDelivery(this.purchase.product);
-    }
+ deliverProduct() {
+     Logistics.issueStandardDelivery(this.purchase.product);
+ }
 
-    trackProduct() {
-        Logistics.trackStandardDelivery(this.purchase.product);
-    }
+ trackProduct() {
+     Logistics.trackStandardDelivery(this.purchase.product);
+ }
 }
 
 function createDlivery(purchase) {
-    if(purchase.deliveryType === 'express') {
-        delivery = new ExpressDelivery(purchase)
-    } else if(purchase.deliveryType === 'insured') {
-        delivery = new InsuredDelivery(purchase)
-    } else {
-        delivery = new StandardDelivery(purchase)
-    }
+ if(purchase.deliveryType === 'express') {
+     delivery = new ExpressDelivery(purchase)
+ } else if(purchase.deliveryType === 'insured') {
+     delivery = new InsuredDelivery(purchase)
+ } else {
+     delivery = new StandardDelivery(purchase)
+ }
 
-    return delivery
+ return delivery
 
 }
-    let delivery: Delivery = createDelivery({});
+ let delivery: Delivery = createDelivery({});
 
-    delivery.deliverProduct();
+ delivery.deliverProduct();
 
-```
+````
