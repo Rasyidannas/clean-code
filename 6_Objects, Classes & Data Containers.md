@@ -2,6 +2,7 @@
 
 1. You typically should prefer many small classes over a few large classes or Classes should have a Single-Responsibility Principle (SRP) (e.g A Product class is responsible for change the product name)
 2. Use at least a couple of the available properties (Medium Cohesion)
+3. Follow the Law Demeter (e.g `this.customer.lastPurchase.date` change to `this.customer.getLastPurchaseDate()`)
 
 # What the difference between Object and Data Container
 
