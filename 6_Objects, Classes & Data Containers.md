@@ -9,7 +9,7 @@
    - **Open-Closed Principle**, class should be open for extension but closed for modification. We can use Polymorphism
    - **Liskov Substitution Principle**, object should be replaceable with instances of their subsclasses without altering the behavior, We can use Inheritance
    - **Interface Segregation Principle**, many client-specific interface are better than one general purpose interface
-   - **Dependency Inversioon Principle**, you should depend upon abstractions, not concretions
+   - **Dependency Inversioon Principle**, you should depend upon abstractions, not concretions. Example:
 
    ```Typescript
     interface Database {
