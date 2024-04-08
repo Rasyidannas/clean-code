@@ -5,6 +5,7 @@
 3. Follow the Law Demeter (e.g `this.customer.lastPurchase.date` change to `this.customer.getLastPurchaseDate()`)
 4. Classes should follow SOLID rule
    - Single-Responsibility Principle, class only work related with that name (e.g A User class has login, signup and assgnRole)
+   - Open-Closed Principle, class should be open for extension but closed for modification. We can use Polymorphism
 
 # What the difference between Object and Data Container
 
