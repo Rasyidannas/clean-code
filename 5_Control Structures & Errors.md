@@ -8,9 +8,30 @@
 2. Prefer Positive Checks (if isEmpty vs isNotEmpty)
 3. Use Guards & Fail Fast
    - Example:
-     - `if(!email.includes(@))`
-     - `if(!user.active)`
-     - `if(!user.hasPurchases())`
+     - Don't do this 
+     ```Javascript
+     function processPayment(user, payment) {
+        if (user.isActive) {
+          if (payment.amount > 0) {
+            if (user.hasFunds) {
+              // execute payment
+            } else {
+              return "No funds";
+            }
+          }
+        }
+      }
+     ```
+     - Do this
+      ```Javascript
+      function processPayment(user, payment) {
+         if (!user.isActive) return "Inactive user";
+         if (payment.amount <= 0) return "Invalid amount";
+         if (!user.hasFunds) return "No funds";
+
+        // execute payment (Clean and flat!)
+      }
+      ```
 
 ## Example of Control Structures & Error
 
